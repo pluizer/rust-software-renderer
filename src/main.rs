@@ -35,13 +35,13 @@ impl Object {
             ],
             colors: vec![
                 Color::RGB(255, 0,   0),
+                Color::RGB(0,   0,   255),
+                Color::RGB(255, 0,   0),
+                Color::RGB(255, 255, 0),
                 Color::RGB(255, 0,   0),
                 Color::RGB(255, 0,   0),
-                Color::RGB(255, 244, 0),
-                Color::RGB(255, 0,   0),
-                Color::RGB(255, 0,   0),
-                Color::RGB(255, 0,   0),
-                Color::RGB(255, 0,   0),
+                Color::RGB(255, 0,   255),
+                Color::RGB(0  , 255, 0),
             ],
             faces: vec![
                 (0, 4, 2), (4, 6, 2),
@@ -61,7 +61,7 @@ impl Object {
             let p2 = screen(&points[i2]);
             let c0 = self.colors[i0];
             let c1 = self.colors[i1];
-            let c2 = self.colors[i0];
+            let c2 = self.colors[i2];
             let face = Face::new(p0, p1, p2);
             if face.orientation() {
                 let (y_from, y_till) = face.height_range();
